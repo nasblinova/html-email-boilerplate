@@ -1,4 +1,4 @@
-#html-email-boilerplate
+# html-email-boilerplate
 
 ## Build real life  version 
 `gulp life`
