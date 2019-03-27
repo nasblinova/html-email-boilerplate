@@ -1,0 +1,132 @@
+//- Custom Mixins
+
+mixin addImg(src,alt, width, height)
+    //- Check if  src has http or https in the URL
+    - src = (src.toLowerCase().indexOf('http')+1) ? src : src
+    -var imgStyle = {'display': 'block', 'padding': '0', color:'#ffffff', 'font-family':'Helvetica, arial, sans-serif', 'font-size': '16px'}
+    img(src=src alt=alt border="0" width=width height=height style=imgStyle)&attributes(attributes)
+
+mixin vSpacer(height, width_p = "100%")
+  tr&attributes(attributes)
+    td(width=width_p height=height style=`font-size:0px; line-height:${height}px;mso-line-height-rule:exactly;`) &nbsp;
+
+mixin hSpacer(width)
+    tr
+        td(width=width height=1 style=`font-size:0px; line-height:1px;mso-line-height-rule:exactly;`) &nbsp;
+
+mixin spacer(size)
+    span(style=`font-size:0px; width=${size.width ? size.width : 1}px; height:${size.height ? size.height: 1}px; line-height:${size.height ? size.height: 1}px;mso-line-height-rule:exactly;display:block;`)&attributes(attributes) &nbsp;
+
+//- params img,bgcolor, width, height
+mixin tdbackground(params)
+    //- Check if  img src has http or https in the URL
+    - params.img = (params.img.toLowerCase().indexOf('http')+1) ? params.img : params.img
+    td(background=`${params.img ? params.img  :" "}` bgcolor=`${params.bgcolor ? params.bgcolor  :" "}` width=`${params.width ? params.width  :" "}` height=`${params.height ? params.height  :" "}` valign="top")&attributes(attributes)
+        <!--[if gte mso 9]>
+        <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style='width:#{params.width ? params.width  :"0"}px;height:#{params.height ? params.height  :"0"}px;'>
+        <v:fill type="tile" src='#{params.img ? params.img  :" "}' color='#{params.bgcolor ? params.bgcolor  :" "}' />
+        <v:textbox inset="0,0,0,0">
+        <div>
+        <![endif]-->
+        if block
+            block
+        </div>
+        <!--[if gte mso 9]>
+        </v:textbox>
+        </v:rect>
+        <![endif]-->
+//- params img, color,width,height, bgcolor, bordercolor, link, radius,font-family,font-size,font-weight, text, send by object literal
+//- +button({})  or +button({width:205, height:40, bgcolor:'green', radius:4})
+mixin button(params)
+
+    -var bgColor = `background-color:${params.bgcolor? params.bgcolor:"gray"};`;
+    -var bg_img = `${ params.img? `background-image:url(${params.img});`:""}`;
+    -var border = params.bordercolor ? `border:1px solid ${params.bordercolor};`:"";
+    -var color = `color:${params.color? params.color:"white"};`;
+    -var fill = `${params.img ? "fill='t'":`fillcolor='${params.bgcolor}'`}`
+    -var font_family = `font-family:${params.font_family? params.font_family:"Arial, sans-serif"};`;
+    -var font_size = `font-size:${params.font_size? params.font_size:"13"}px;`;
+    -var font_weight = `font-weight:${params.font_weight?params.font_weight:"bold"};`;
+    -var text= params.text ? params.text:"Button";
+    -var text_hide = (params.img || params.bordercolor)?"mso-hide:all;":""
+    -var height= `${params.height ? params.height:"40"}px;`;
+    -var link = params.link ? params.link:"#"
+    -var stroke = params.bordercolor ? `strokecolor='${params.bordercolor}'` : "stroke='f'"
+    -var width= `width:${params.width ? params.width :"100"}px;`;
+
+    div
+        if params.radius
+          <!--[if mso]>
+          <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="#{link}" style='height:#{height}v-text-anchor:middle;#{width}' arcsize='#{Math.ceil((params.radius/params.height)*100)}%' #{stroke} #{fill}>
+          if params.img
+            <v:fill type="tile" src="#{params.img}" color="#{params.bgcolor}" />
+          <w:anchorlock/>
+          if (params.bordercolor || params.img)
+            <center style='#{color} #{font_family} #{font_size} #{font_weight}'>#{text}</center>
+            </v:roundrect>
+            <![endif]-->
+            a(href=link style=`${bgColor}${bg_img}${color}display:inline-block;${font_family}${font_size}${font_weight}border-radius:${params.radius}px;${border}line-height:${height}text-align:center;text-decoration:none;${width}-webkit-text-size-adjust:none;${text_hide}`) #{text}
+          else
+            <center>
+            <![endif]-->
+              a(href=link style=`${bgColor}${color}display:inline-block;${font_family}${font_size}${font_weight}border-radius:${params.radius}px;line-height:${height}text-align:center;text-decoration:none;${width}-webkit-text-size-adjust:none;${text_hide}`) #{text}
+            <!--[if mso]>
+            </center>
+            </v:roundrect>
+            <![endif]-->
+        else
+          <!--[if mso]>
+          <v:rect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="#{link}" style='height:#{height}v-text-anchor:middle;#{width}' #{stroke} #{fill}>
+          if params.img
+            <v:fill type="tile" src="#{params.img}" color="#{params.bgcolor}" />
+          <w:anchorlock/>
+          if (params.bordercolor || params.img)
+            <center style='#{color}#{font_family}#{font_size}#{font_weight}'>#{text}</center>
+            </v:rect>
+            <![endif]-->
+            a(href=link style=`${bgColor}${bg_img}${color}display:inline-block;${font_family}${font_size}${font_weight}${border}line-height:${height}text-align:center;text-decoration:none;${width}-webkit-text-size-adjust:none;${text_hide}`) #{text}
+          else
+            <center>
+            <![endif]-->
+              a(href=link style=`${bgColor}${color}display:inline-block;${font_family}${font_size}${font_weight}line-height:${height}text-align:center;text-decoration:none;${width}-webkit-text-size-adjust:none;${text_hide}`) #{text}
+            <!--[if mso]>
+            </center>
+            </v:rect>
+            <![endif]-->
+
+//-Receives vertical alignment, symbol and attributes, classes
+mixin bullet(v_align="top", symbol="•")
+  td(valign=v_align)&attributes(attributes) #{symbol}
+
+//- Receives number of columns
+mixin columns(columns)
+    - var num_rows = new Array(columns)
+    - var col_att = new Array(columns)
+    //- - var num_rows = new Array(columns).fill({})
+
+    mixin col(index)
+        - col_att[index] = attributes
+        - num_rows[index] = block;
+        //- - num_rows[index].body = block;
+    block
+    table&attributes(attributes)
+      tr
+        each tab,index in num_rows
+          td&attributes(col_att[index])
+            - tab && tab()
+
+//- Receives classes or boolean for hide and show
+mixin mobile_h_s(show,hide)
+  if show
+    <!--[if !mso]><!-->
+    div(style={display:"none"} class="show")
+      block show
+  <!--<![endif]-->
+  if hide
+    table(width="100%" border="0" cellpadding="0" cellspacing="0" align="center" style="margin:0 auto;" class="hide")
+      block hide
+
+//- you must pass number with dashes
+mixin tel_link(number, number_link, link_class = 'tel_link')
+  -var link = (number_link? number_link : number)
+  a(class=link_class href=`tel://${number}` target="_blank" style='color:#000;text-decoration:none;') #{link}

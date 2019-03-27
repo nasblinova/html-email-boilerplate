@@ -1,0 +1,48 @@
+mixin price()
+	wrapper.pdSides
+		row
+			columns.priceTable(small="12" large="12")
+				wrapper.pdSides-4
+					row
+						columns.borderNone.border(small="12" large="12")
+							row
+								columns(small="6" large="4")
+									spacer(size="20")
+									div.titleTable(class="text-left") Order ID
+									spacer(size="4")
+									div.descriptionTable(class="text-left") {{ orderId }}
+									spacer(size="20")
+								columns(small="6" large="4")
+									spacer(size="20")
+									div.titleTable(class="text-left") Date
+									spacer(size="4")
+									div.descriptionTable(class="text-left") {{date}}
+									spacer(size="20")
+								columns(small="12" large="4")
+									spacer(size="20")
+									div.titleTable(class="text-left") Billed to
+									spacer(size="4")
+									div.descriptionTable.billedTo(class="text-left") {{billedTo}}
+									spacer(size="20")
+					row
+						columns.borderNone.border(small="12" large="6")
+							row
+								columns(small="9" large="6")
+									spacer(size="20")
+									div.descriptionTable(class="text-left") {{titleFor}} use of Electron™
+									spacer(size="20")
+								columns(small="3" large="6")
+									spacer(size="20")
+									div.descriptionTable--right(class="text-right") ${{total}}
+									spacer(size="20")
+					row
+						columns(small="12" large="12")
+							row
+								columns(small="7" large="9")
+									spacer(size="30")
+									div.descriptionTableTotal(class="text-right small-text-right" valign="middle") Total:
+									spacer(size="30")
+								columns(small="5" large="3")
+									spacer(size="30")
+									div.descriptionTableTotalRight(class="text-right small-text-right") ${{total}}
+									spacer(size="30")

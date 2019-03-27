@@ -1,0 +1,20 @@
+mixin footer()
+	container.ftr
+		spacer(size="20")
+			row
+				columns(small="12" large="12")
+					row
+						columns(small="12" large="4")
+							a.footer-link(href="http://example.com/faq" class="text-center") FAQ
+							spacer(size="30" class="hide-for-large")
+						columns(small="12" large="4")
+							a.footer-link(href="http://example.com/terms" class="text-center") Privacy
+							spacer(size="30" class="hide-for-large")
+						columns(small="12" large="4")
+							a.footer-link(href="http://example.com/privacy" class="text-center") Terms
+			spacer(size="30")
+				row
+					columns(small="12" large="12")
+						center
+							div.copyright Address line
+				spacer(size="20")

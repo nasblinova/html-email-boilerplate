@@ -1,0 +1,37 @@
+body{
+  color: #000000;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+html {
+	background-color: #f5f5f5;
+}
+
+
+@mixin container($paddingSide:false) {
+  width: 1280px;
+  margin: 0 auto;
+  @if $paddingSide {
+		padding: 0 #{$paddingSide+'px'};
+	} @else {
+		padding: 0 90px;
+	}
+	@media (max-width: 1279px) {
+		width: 1100px;
+		margin: 0 auto;
+		padding: 0;
+	}
+	// @media #{$md}{
+	// 	width: 100%;
+	// 	padding: 0 16px;
+	// }
+	// @media #{$sm}{
+	// 	width: 100%;
+	// 	padding: 0 64px;
+	// }
+	// @media #{$xs} {
+	// 	width: 100%;
+	// 	padding: 0 16px;
+	// }
+}

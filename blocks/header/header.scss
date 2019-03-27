@@ -1,0 +1,50 @@
+.headerBg {
+	height: 242px;
+	background-image: url("/assets/img/red-bg-desktop.jpg");
+	background-repeat: no-repeat;
+	background-position: bottom;
+	background-size: 100%;
+  @media only screen and (max-width: #{$global-breakpoint}) {
+    height: 250px !important;
+    background-position: bottom !important;
+    background-size: cover !important;
+    background-image: url("/assets/img/red-bg-mobile.jpg") !important;
+  }
+}
+a {
+	text-decoration: none;
+}
+.title {
+	font-size: 22px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.18;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+}
+.description {
+	font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+}
+.logoHeader {
+  width: 161px !important;
+  height: 36px !important;
+}
+.headerTitle {
+  @media only screen and (max-width: #{$global-breakpoint}) {
+    font-size: 20px !important;
+  }
+}
+.headerDesc {
+  @media only screen and (max-width: #{$global-breakpoint}) {
+    font-size: 14px !important;
+  }
+}

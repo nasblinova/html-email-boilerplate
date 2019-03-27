@@ -1,0 +1,78 @@
+.pdSides {
+	.wrapper-inner {
+		padding: 0 20px;
+	}
+}
+.pdSides-4 {
+	.wrapper-inner {
+		padding: 0 4px;
+	}
+}
+.priceTable {
+	border-radius: 10px;
+	background-color: #f5f5f5;
+}
+th.columns .borderNone {
+border: none;
+}
+th.columns .border {
+	border-bottom: 1px solid #dcdcdc;
+}
+
+.titleTable {
+	font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.14;
+  letter-spacing: normal;
+  color: #787878;
+}
+.descriptionTable {
+	font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  color: #000000;
+  &--right {
+  	font-weight: 600;
+  	text-align: right;
+  }
+}
+th.columns {
+	padding-bottom: 8px;
+}
+.descriptionTableTotal {
+	font-size: 28px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 0.86;
+  letter-spacing: normal;
+  color: #000000;
+  text-align: right;
+}
+.descriptionTableTotalRight {
+	font-size: 28px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 0.86;
+  letter-spacing: normal;
+  color: #000000;
+  text-align: right;
+}
+.billedTo {
+  width: 164px;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  @media only screen and (max-width: #{$global-breakpoint}) {
+    width: 100%;
+    white-space: normal;
+  } 
+}
+
+

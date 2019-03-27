@@ -1,0 +1,28 @@
+.ftr {
+	background-color: transparent !important;
+}
+.footer-link {
+	display: block;
+	font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  text-align: center;
+  color: #3c3c3c;
+  transition: all 600ms cubic-bezier(0.23, 1, 0.32, 1);
+  &:hover{
+		color: lighten(#3c3c3c, 30%);
+  }
+}
+.copyright {
+	font-size: 10px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.6;
+  letter-spacing: normal;
+  text-align: center;
+  color: #787878;
+}

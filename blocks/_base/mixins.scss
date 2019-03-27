@@ -1,0 +1,55 @@
+@mixin input-placeholder {
+	&::-webkit-input-placeholder {
+		@content;
+	}
+	&:-moz-placeholder { /* Firefox 18- */
+		@content;
+	}
+	&::-moz-placeholder { /* Firefox 19+ */
+		@content;
+	}
+	&:-ms-input-placeholder {
+		@content;
+	}
+}
+
+@mixin button-hover{
+	&:hover {
+		opacity: 0.8;
+		text-decoration: none ;
+	}
+}
+
+/*media*/
+@mixin max-width($x) {
+	@media screen and (max-width: $x + px){
+		@content;
+	}
+}
+
+@mixin max-height($x) {
+	@media screen and (max-height: $x + px){
+		@content;
+	}
+}
+
+@mixin transition {
+	transition: all 300ms;
+}
+@mixin shadow{
+	box-shadow: 0px 3px 5.1px 0.9px rgba(0, 0, 0, 0.75);
+}
+@mixin shadow1{
+	box-shadow: 1px 1px 14px rgba(128, 128, 128, 0.2);
+}
+
+/*colors*/
+@function lighter($color, $tone) {
+	$adjust: 16*$tone;
+	@return adjust-color($color, $red: $adjust, $green: $adjust, $blue: $adjust);
+}
+
+@function darker($color, $tone) {
+	$adjust: -16*$tone;
+	@return adjust-color($color, $red: $adjust, $green: $adjust, $blue: $adjust);
+}

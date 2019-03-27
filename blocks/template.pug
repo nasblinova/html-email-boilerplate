@@ -1,0 +1,30 @@
+include _assets/bemto/bemto
+- set_bemto_settings({ modifier: "--" })
+
+include _assets/mixins
+
+include head/head
+include header/header
+include price/price
+include invite/invite
+include map/map
+include menu/menu
+include footer/footer
+
+
+doctype transitional
+html(xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en")
+	block head
+		head
+			+head({
+				"title": "ETG email"
+			})
+		body
+			table.body
+				tr
+					td.center(align="center" valign="top")
+						center
+							container
+								block content
+							block footer
+			div(style="display:none; white-space:nowrap; font:15px courier; line-height:0;") &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;

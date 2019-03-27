@@ -1,0 +1,22 @@
+mixin map()
+	wrapper.pdSides
+		spacer(size="20")
+			row.borderRS
+				columns.inviteBox-zero.mobilePdZero(small="12" large="12")
+					wrapper.pdSides-zero
+						row
+							columns(small="12" large="12")
+								row
+									columns(small="12" large="6" class="hide-for-large")
+										img(src="/assets/img/map-mobile.jpg" width="280px" height="120px" class="mapMobile")
+									columns(small="12" large="6")
+										wrapper.pdMobile
+											spacer(size="20")
+											div.titleMap(class="text-left") List spots
+											spacer(size="6")
+											div.descriptionMap(class="text-left") Brows available station
+											span.descriptionMap(class="text-left") station on map 
+											a.openMap(href="https://example.com/") Open map
+											spacer(size="20")
+									columns(large="6" class="show-for-large")
+										img(src="/assets/img/map.jpg" width="274px" height="120px" class="mapDesktop")

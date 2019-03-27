@@ -1,0 +1,86 @@
+.pdSides-4 {
+	.wrapper-inner {
+		padding: 0 4px;
+	}
+}
+.borderRS {
+	border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  border-collapse: separate;
+}
+.pdSides-zero .wrapper-inner {
+	padding: 0;
+}
+.inviteBox {
+	&-zero {
+		padding-right: 0 !important;
+	}
+}
+.titleMap {
+	font-size: 16px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  color: #000000;
+}
+.descriptionMap {
+	font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.29;
+  letter-spacing: normal;
+  color: #787878;
+}
+.openMap {
+	display: block;
+	text-decoration: none;
+	font-size: 14px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.29;
+  letter-spacing: normal;
+  color: #fc4654;
+  transition: all 600ms cubic-bezier(0.23, 1, 0.32, 1);
+  &:hover{
+		color: #CC2944;
+  }
+  &:hover {
+    color: #CC2944;
+  }
+
+  &:active {
+    color: #CC2944;
+  }
+
+  &:visited {
+    color: #CC2944;
+  }
+}
+.mapDesktop {
+  width: 274px !important;
+  height: 120px !important;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px; 
+}
+.mapMobile {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px; 
+}
+table.body .columns {
+  &.mobilePdZero {
+    @media only screen and (max-width: #{$global-breakpoint}) {
+      padding-left: 0!important;
+      padding-right: 0!important;
+    }
+  }
+}
+.pdMobile .wrapper-inner {
+  @media only screen and (max-width: #{$global-breakpoint}) {
+    padding-left: 16px!important;
+    padding-right: 16px!important;
+  }
+}

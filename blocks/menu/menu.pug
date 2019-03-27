@@ -1,0 +1,16 @@
+mixin menu()
+	wrapper.pdSides
+		spacer(size="30")
+			row
+				columns.pdZero(small="12" large="12")
+					wrapper.pdSides-4
+						row
+							columns(small="12" large="4")
+								a.menu-link(href="https://example.com/" class="text-center") Link1
+								spacer(size="20" class="hide-for-large")
+							columns(small="12" large="4")
+								a.menu-link(href="mailto:support@example.com" class="text-center") Link2
+								spacer(size="20" class="hide-for-large")
+							columns(small="12" large="4")
+								a.menu-link(href="https://example.com/" class="text-center") Link3
+		spacer(size="30")

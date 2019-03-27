@@ -1,0 +1,28 @@
+{
+  "meta": {
+    "year": 2019,
+    "client": "html-email-boilerplate",
+    "job": "receipt"
+  },
+  "mailgun": {
+    "api_key": "",
+    "domain": ""
+  },
+  "aws": {
+    "region": "",
+    "endpoint": "",
+    "accessKeyId": "",
+    "secretAccessKey": "",
+    "params": {
+      "Bucket": ""
+    },
+    "url": ""
+  },
+  "testing": {
+    "from": "html-email-boilerplate <noreply@html-email-boilerplate.com>",
+    "lists": {
+      "list1": "test@gmail.com, test1@electrontogo.com",
+      "list2": "test3@electrontogo.com",
+    }
+  }
+}
